@@ -1,0 +1,26 @@
+repositories {
+    jcenter()
+    google()
+    mavenCentral()
+}
+dependencies {
+    implementation gradleApi() //gradle sdk
+    implementation localGroovy() //groovy sdk
+    implementation 'com.android.tools.build:gradle:3.6.1'
+    implementation 'org.javassist:javassist:3.20.0-GA'
+}
+sourceSets {
+    main {
+        groovy {
+            srcDir 'src/main/groovy'
+        }
+
+        java {
+            srcDir "src/main/java"
+        }
+
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+}

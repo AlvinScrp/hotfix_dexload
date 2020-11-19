@@ -1,4 +1,9 @@
+include ':hack'
+include ':appb'
+include ':appa'
 rootProject.name='android_sample'
-include ':app'
+include ':hotfix_dexload'
 include ':retrofitsample'
 include ':library'
+include ':plugin'
+

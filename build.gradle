@@ -5,11 +5,16 @@ buildscript {
     repositories {
         google()
         jcenter()
+        mavenCentral()
+//        maven {
+//            url uri('repo')
+//        }
         
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -27,3 +32,20 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+println("in build.gradle")
+println("In android_sample,gradle id is"+gradle.hashCode())
+println("Home Dir:"+gradle.gradleHomeDir)
+println "User Home Dir:" + gradle.gradleUserHomeDir
+println "Parent: " + gradle.parent
+
+task log{
+    println("in task log")
+    doLast {
+        println("doLast")
+    }
+    doFirst {
+        println("doBefore")
+    }
+}
+
+
