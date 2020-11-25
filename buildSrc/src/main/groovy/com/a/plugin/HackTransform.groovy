@@ -91,7 +91,7 @@ class HackTransform extends Transform {
         }
     }
 
-    private void modify(File file, String inputDir) {
+    private void modify(File file, String fileName) {
         def filePath = file.absolutePath
 
         if (!filePath.endsWith(SdkConstants.DOT_CLASS)) {
@@ -102,7 +102,7 @@ class HackTransform extends Transform {
             return
         }
 
-        def className = filePath.replace(inputDir, "")
+        def className = filePath.replace(fileName, "")
                 .replace("\\", ".")
                 .replace("/", ".")
         def name = className.replace(SdkConstants.DOT_CLASS, "")
@@ -113,7 +113,7 @@ class HackTransform extends Transform {
             println "modify skip:${file.absolutePath}"
             return
         }
-        addCode(ctClass, inputDir)
+        addCode(ctClass, fileName)
 
     }
 
