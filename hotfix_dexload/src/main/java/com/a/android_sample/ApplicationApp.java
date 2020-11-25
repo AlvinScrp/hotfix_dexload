@@ -273,7 +273,8 @@ public class ApplicationApp extends Application {
 
         try {
             ClassLoader classLoader = context.getClassLoader();
-            Object pathListObject  = getField(classLoader, "pathList").get(classLoader);
+            Field pathList = getField(classLoader, "pathList");
+            Object pathListObject = pathList.get(classLoader);
 
             Field dexElementsField = getField(pathListObject, "dexElements");
             //1.先记录插入patch前 dexElements的长度
@@ -287,7 +288,9 @@ public class ApplicationApp extends Application {
             //3.读取插入patch后 dexElements的长度
             int newLength = newDexElements.length;
             //4.前后交换，并重新反射赋值dexElements
-            Object[] resultElements = new Object[newLength];
+//            Object[] resultElements = new Object[newLength];
+            Object[] resultElements = (Object[]) Array.newInstance(newDexElements.getClass().getComponentType(),
+                    newLength);
             System.arraycopy(newDexElements, 0, resultElements, newLength - oldLength, oldLength);
             System.arraycopy(newDexElements, oldLength, resultElements, 0, newLength - oldLength);
             dexElementsField.set(pathListObject, resultElements);

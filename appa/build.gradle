@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'hello-plugin'
+//apply plugin: 'hello-plugin'
 //apply plugin: 'javassist-plugin'
 
 android {
