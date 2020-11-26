@@ -32,7 +32,7 @@ public class ApplicationApp extends Application {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
 
-        String[] dexFileNames = {"hack_dex.jar", "patch.dex"};
+        String[] dexFileNames = {"hack.dex", "patch.dex"};
 
         for (String dexFileName : dexFileNames) {
             String dexFilePath = copyAssetsDex(dexFileName);

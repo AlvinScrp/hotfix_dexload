@@ -1,14 +1,12 @@
 package com.a.fix;
 
+public  class M {
+    public static String a(){return  "M aaa";}
+}
+
 //public  class M {
 //    public static String a(){
-//       return  "M aaa";
+//        return  "M aaa patch";
 //    }
 //}
-
-public  class M {
-    public static String a(){
-        return  "M aaa fix";
-    }
-}
 
