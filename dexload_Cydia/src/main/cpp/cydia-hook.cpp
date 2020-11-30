@@ -1,45 +1,44 @@
-//#include <jni.h>
+#include <jni.h>
 #include "include/substrate.h"
 #include <android/log.h>
-//#include <unistd.h>
-//#include <stdio.h>
-//#include <fcntl.h>
-//#include <sys/types.h>
-//#include <string.h>
-//#include <sys/stat.h>
-//#include <stdlib.h>
-//#include "include/dalvik.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <stdlib.h>
+#include "include/dalvik.h"
 
 #define TAG "alvin"
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, TAG, __VA_ARGS__)
 
+//旧函数指针，指向旧函数
 void *(*oldDvmResolveClass)(void *referrer, unsigned int classIdx, bool fromUnverifiedConstant);
 
+//新函数实现
 void *newDvmResolveClass(void *referrer, unsigned int classIdx, bool fromUnverifiedConstant) {
 
-    return oldDvmResolveClass(referrer, classIdx, true);
+//    return oldDvmResolveClass(referrer, classIdx, true);
 
-//    void *res = oldDvmResolveClass(referrer, classIdx, true);
+    void *res = oldDvmResolveClass(referrer, classIdx, true);
 //    try {
-//        ClassObject *referrerClass = reinterpret_cast<ClassObject *>(referrer);
-//
-//        ClassObject *resClass = reinterpret_cast<ClassObject *>(res);
+    ClassObject *referrerClass = reinterpret_cast<ClassObject *>(referrer);
 
-//        ClassObject *referrerClass = referrer;
-//
-//        ClassObject *resClass =res;
-//        if (resClass == NULL) {
-//            LOGE("newDvmResolveClass  %s, %s", referrerClass->descriptor,
-//                 "resClass is NULL");
-//        } else {
-//            LOGE("newDvmResolveClass  %s, %s", referrerClass->descriptor,
-//                 resClass->descriptor);
-//        }
+    ClassObject *resClass = reinterpret_cast<ClassObject *>(res);
+
+    if (resClass == NULL) {
+        LOGE("newDvmResolveClass  %s, %s", referrerClass->descriptor,
+             "resClass is NULL");
+    } else {
+        LOGE("newDvmResolveClass  %s, %s", referrerClass->descriptor,
+             resClass->descriptor);
+    }
 //    } catch (std::exception e) {
 //        LOGE("newDvmResolveClass fromUnverifiedConstant exception  %s", e.what());
 //    }
 
-//    return res;
+    return res;
 
 
 }
