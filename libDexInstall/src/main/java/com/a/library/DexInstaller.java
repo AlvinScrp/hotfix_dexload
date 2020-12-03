@@ -2,12 +2,15 @@ package com.a.library;
 
 import android.content.Context;
 import android.os.Build;
+import android.text.TextUtils;
 import android.util.Log;
 
 import androidx.core.content.ContextCompat;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Array;
@@ -52,7 +55,7 @@ public class DexInstaller {
 
     }
 
-    private  static void installDex(Context context, String filePath) {
+    public static void installDex(Context context, String filePath) {
 
         File file = new File(filePath);
         Log.i(TAG, "" + file.exists());
@@ -294,5 +297,6 @@ public class DexInstaller {
         }
         throw new NoSuchFieldException("Field: " + name + " not found in " + instance.getClass());
     }
+
 
 }

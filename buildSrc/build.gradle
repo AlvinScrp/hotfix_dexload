@@ -1,3 +1,4 @@
+
 repositories {
     jcenter()
     google()
@@ -6,8 +7,10 @@ repositories {
 dependencies {
     implementation gradleApi() //gradle sdk
     implementation localGroovy() //groovy sdk
+    compile group: 'org.smali', name: 'dexlib2', version: '2.2.4'
     implementation 'com.android.tools.build:gradle:3.6.1'
     implementation 'org.javassist:javassist:3.20.0-GA'
+
 }
 sourceSets {
     main {
@@ -18,7 +21,6 @@ sourceSets {
         java {
             srcDir "src/main/java"
         }
-
         resources {
             srcDir 'src/main/resources'
         }
