@@ -28,13 +28,7 @@ public class ApplicationApp extends Application {
 
         ResolveTool.resolvePatchClasses(base);
 
-        Log.d("alvin", "bug class:" + com.a.fix.M.class);
+//        Log.d("alvin", "bug class:" + com.a.fix.M.class);
     }
 
-
-//    private String classNameToDescriptor(String dotName) {
-//        String desc = "L" + dotName.replace('.', '/') + ";";
-//        Log.d("alvin", "classNameToDescriptor: " + dotName + "  -->  " + desc);
-//        return desc;
-//    }
 }

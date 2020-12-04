@@ -45,10 +45,7 @@ class QFixPlugin implements Plugin<Project> {
                             files.each { file ->
                                 String dexfilepath = file.getAbsolutePath()
                                 println "Outputs Dex file's path: " + dexfilepath
-//                                if (InjectClassHelper.dexHasPatchClass(dexfilepath, "Lcom/a/fix/M;")) {
                                    InjectClassHelper.injectHackClass(dexfilepath)
-//                                }
-
                             }
 
                         }
