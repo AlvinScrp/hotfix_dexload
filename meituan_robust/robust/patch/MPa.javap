@@ -1,0 +1,160 @@
+Classfile /Users/mawenqiang/Documents/demo_project/hotfix_dexload/meituan_robust/robust/patch/com/a/robust/data/MPatchControl.class
+  Last modified 2020-12-24; size 1116 bytes
+  MD5 checksum e09afb9d972a5f983751768fb8c50477
+  Compiled from "MPatchControl.java"
+public class com.a.robust.data.MPatchControl implements com.a.robust.patch.ChangeQuickRedirect
+  minor version: 0
+  major version: 51
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Utf8               com/a/robust/data/MPatchControl
+   #2 = Class              #1             // com/a/robust/data/MPatchControl
+   #3 = Utf8               java/lang/Object
+   #4 = Class              #3             // java/lang/Object
+   #5 = Utf8               SourceFile
+   #6 = Utf8               MPatchControl.java
+   #7 = Utf8               com/a/robust/patch/ChangeQuickRedirect
+   #8 = Class              #7             // com/a/robust/patch/ChangeQuickRedirect
+   #9 = Utf8               isSupport
+  #10 = Utf8               ([Ljava/lang/Object;Ljava/lang/Object;ZI)Z
+  #11 = Utf8               :1:
+  #12 = String             #11            // :1:
+  #13 = Utf8               java/lang/StringBuffer
+  #14 = Class              #13            // java/lang/StringBuffer
+  #15 = Utf8               <init>
+  #16 = Utf8               ()V
+  #17 = NameAndType        #15:#16        // "<init>":()V
+  #18 = Methodref          #14.#17        // java/lang/StringBuffer."<init>":()V
+  #19 = Utf8               :
+  #20 = String             #19            // :
+  #21 = Utf8               append
+  #22 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuffer;
+  #23 = NameAndType        #21:#22        // append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+  #24 = Methodref          #14.#23        // java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+  #25 = Utf8               (I)Ljava/lang/StringBuffer;
+  #26 = NameAndType        #21:#25        // append:(I)Ljava/lang/StringBuffer;
+  #27 = Methodref          #14.#26        // java/lang/StringBuffer.append:(I)Ljava/lang/StringBuffer;
+  #28 = Utf8               toString
+  #29 = Utf8               ()Ljava/lang/String;
+  #30 = NameAndType        #28:#29        // toString:()Ljava/lang/String;
+  #31 = Methodref          #14.#30        // java/lang/StringBuffer.toString:()Ljava/lang/String;
+  #32 = Utf8               java/lang/String
+  #33 = Class              #32            // java/lang/String
+  #34 = Utf8               contains
+  #35 = Utf8               (Ljava/lang/CharSequence;)Z
+  #36 = NameAndType        #34:#35        // contains:(Ljava/lang/CharSequence;)Z
+  #37 = Methodref          #33.#36        // java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+  #38 = Utf8               Code
+  #39 = Utf8               accessDispatch
+  #40 = Utf8               ([Ljava/lang/Object;Ljava/lang/Object;ZI)Ljava/lang/Object;
+  #41 = Utf8               com/a/robust/data/MPatch
+  #42 = Class              #41            // com/a/robust/data/MPatch
+  #43 = Utf8               (Ljava/lang/Object;)V
+  #44 = NameAndType        #15:#43        // "<init>":(Ljava/lang/Object;)V
+  #45 = Methodref          #42.#44        // com/a/robust/data/MPatch."<init>":(Ljava/lang/Object;)V
+  #46 = Utf8               java/lang/Integer
+  #47 = Class              #46            // java/lang/Integer
+  #48 = Utf8               intValue
+  #49 = Utf8               ()I
+  #50 = NameAndType        #48:#49        // intValue:()I
+  #51 = Methodref          #47.#50        // java/lang/Integer.intValue:()I
+  #52 = Utf8               a
+  #53 = Utf8               (I)Ljava/lang/String;
+  #54 = NameAndType        #52:#53        // a:(I)Ljava/lang/String;
+  #55 = Methodref          #42.#54        // com/a/robust/data/MPatch.a:(I)Ljava/lang/String;
+  #56 = Utf8               java/lang/Throwable
+  #57 = Class              #56            // java/lang/Throwable
+  #58 = Utf8               printStackTrace
+  #59 = NameAndType        #58:#16        // printStackTrace:()V
+  #60 = Methodref          #57.#59        // java/lang/Throwable.printStackTrace:()V
+  #61 = Utf8               [Ljava/lang/Object;
+  #62 = Class              #61            // "[Ljava/lang/Object;"
+  #63 = Utf8               StackMapTable
+  #64 = Methodref          #4.#17         // java/lang/Object."<init>":()V
+{
+  public boolean isSupport(java.lang.Object[], java.lang.Object, boolean, int);
+    descriptor: ([Ljava/lang/Object;Ljava/lang/Object;ZI)Z
+    flags: ACC_PUBLIC
+    Code:
+      stack=3, locals=5, args_size=5
+         0: ldc           #12                 // String :1:
+         2: new           #14                 // class java/lang/StringBuffer
+         5: dup
+         6: invokespecial #18                 // Method java/lang/StringBuffer."<init>":()V
+         9: ldc           #20                 // String :
+        11: invokevirtual #24                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+        14: iload         4
+        16: invokevirtual #27                 // Method java/lang/StringBuffer.append:(I)Ljava/lang/StringBuffer;
+        19: ldc           #20                 // String :
+        21: invokevirtual #24                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+        24: invokevirtual #31                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+        27: invokevirtual #37                 // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+        30: ireturn
+
+  public java.lang.Object accessDispatch(java.lang.Object[], java.lang.Object, boolean, int);
+    descriptor: ([Ljava/lang/Object;Ljava/lang/Object;ZI)Ljava/lang/Object;
+    flags: ACC_PUBLIC
+    Code:
+      stack=3, locals=7, args_size=5
+         0: aconst_null
+         1: astore        5
+         3: iload_3
+         4: ifne          20
+         7: new           #42                 // class com/a/robust/data/MPatch
+        10: dup
+        11: aload_2
+        12: invokespecial #45                 // Method com/a/robust/data/MPatch."<init>":(Ljava/lang/Object;)V
+        15: astore        5
+        17: goto          30
+        20: new           #42                 // class com/a/robust/data/MPatch
+        23: dup
+        24: aconst_null
+        25: invokespecial #45                 // Method com/a/robust/data/MPatch."<init>":(Ljava/lang/Object;)V
+        28: astore        5
+        30: iconst_1
+        31: iload         4
+        33: if_icmpne     51
+        36: aload         5
+        38: aload_1
+        39: iconst_0
+        40: aaload
+        41: checkcast     #47                 // class java/lang/Integer
+        44: invokevirtual #51                 // Method java/lang/Integer.intValue:()I
+        47: invokevirtual #55                 // Method com/a/robust/data/MPatch.a:(I)Ljava/lang/String;
+        50: areturn
+        51: goto          64
+        54: astore        6
+        56: aload         6
+        58: invokevirtual #60                 // Method java/lang/Throwable.printStackTrace:()V
+        61: goto          64
+        64: aconst_null
+        65: areturn
+      Exception table:
+         from    to  target type
+             0    51    54   Class java/lang/Throwable
+      StackMapTable: number_of_entries = 5
+        frame_type = 255 /* full_frame */
+          offset_delta = 20
+          locals = [ class com/a/robust/data/MPatchControl, class "[Ljava/lang/Object;", class java/lang/Object, int, int, null ]
+          stack = []
+        frame_type = 255 /* full_frame */
+          offset_delta = 9
+          locals = [ class com/a/robust/data/MPatchControl, class "[Ljava/lang/Object;", class java/lang/Object, int, int, class com/a/robust/data/MPatch ]
+          stack = []
+        frame_type = 20 /* same */
+        frame_type = 255 /* full_frame */
+          offset_delta = 2
+          locals = [ class com/a/robust/data/MPatchControl, class "[Ljava/lang/Object;", class java/lang/Object, int, int ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 9 /* same */
+
+  public com.a.robust.data.MPatchControl();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #64                 // Method java/lang/Object."<init>":()V
+         4: return
+}
+SourceFile: "MPatchControl.java"
